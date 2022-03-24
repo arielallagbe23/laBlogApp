@@ -13,6 +13,14 @@ class PostController extends Controller
         return view ('add-post');
     }
 
+    public function getAllPost(post $posts)
+    {
+        
+        $posts = post::all();
+       
+        return view ('post-added', compact('posts'));
+    }
+
     public function storePost(Request $request)
     {
         $text = $request->text;
